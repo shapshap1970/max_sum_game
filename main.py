@@ -1,11 +1,12 @@
 import math 
-
+import random
 
 def print_state(sum1, sum2, arr):
     print(f'{arr} \n  AI:{sum1}    Player:{sum2}')
 
 def main():
-    arr = [1,3,7,5,1, 2,5,9,5,4]
+    arr = []    
+    arr = [random.randint(1, 13) for i in range(14)]
     sum1, sum2 = 0,0
     while len(arr) >0:
         print_state(sum1, sum2, arr)
