@@ -8,6 +8,19 @@ def main():
     arr = []    
     arr = [random.randint(1, 13) for i in range(14)]
     sum1, sum2 = 0,0
+    print_state(sum1, sum2, arr)
+    str = input("Who starts first? Computer or Player: C or P ")
+    if str == "P":
+        print("Player starts first")
+        str = input("L or R: ")
+        if str == "L":
+            sum2+=arr[0]
+            arr = arr[1:]
+        else:
+            sum2+=arr[-1]
+            arr= arr[0:-1]
+    else:
+        print("Computer starts first")
     while len(arr) >0:
         print_state(sum1, sum2, arr)
         best_score, move = minmax(arr, 0 , 0 , True)
